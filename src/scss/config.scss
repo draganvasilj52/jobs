@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+$hoverColor: rgba(243, 245, 254, 1);
+
+@mixin flex($direction, $align-items, $justify-content) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}

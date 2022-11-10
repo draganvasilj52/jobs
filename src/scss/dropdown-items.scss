@@ -1,0 +1,54 @@
+.dropdown-item-jobs {
+  &:hover {
+    background-color: $hoverColor;
+  }
+  display: flex;
+  margin-bottom: 5px;
+  padding: 10px;
+
+  &-right {
+    @include flex(column, none, none);
+    padding-left: 10px;
+
+    .tag {
+      font-weight: bold;
+      padding-bottom: 5px;
+    }
+
+    .elements-div {
+      display: flex;
+      flex-wrap: wrap;
+      line-height: 25px;
+    }
+
+    .items {
+      cursor: pointer;
+      &:hover {
+        color: blue;
+      }
+      font-size: 16px;
+      margin-right: 7px;
+
+      &:last-child {
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.dropdown-item-companies {
+  &:hover {
+    background-color: $hoverColor;
+  }
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding: 10px;
+  cursor: pointer;
+
+  .companies {
+    padding-left: 10px;
+  }
+}
