@@ -62,7 +62,7 @@ const HeaderMiddle = () => {
           setHoveredItem={setHoveredItem}
           hoveredItem={hoveredItem}
           item={item}
-          index={index}
+          key={index}
         />
       ))}
     </div>

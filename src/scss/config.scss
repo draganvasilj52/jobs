@@ -5,6 +5,8 @@
 }
 
 $hoverColor: rgba(243, 245, 254, 1);
+$sectionBgColor: rgb(243, 245, 254);
+$sectionTxtColor: rgb(104, 103, 129);
 
 @mixin flex($direction, $align-items, $justify-content) {
   display: flex;
