@@ -23,8 +23,8 @@ const Input = ({ item }) => {
   let singleItem = elements.map((item) => item)
   let options = displayDropdownOptions.filter((el) => !singleItem.includes(el))
 
-  const handleClick = (tit) => {
-    setElements((prev) => [...prev, tit])
+  const handleClick = (opt) => {
+    setElements((prev) => [...prev, opt])
   }
 
   return (
@@ -51,7 +51,7 @@ const Input = ({ item }) => {
       {openD && (
         <div className="inputDiv_dropdown">
           {options.map((opt, index) => (
-            <p key={index} onClick={() => handleClick(opt, item.name)}>
+            <p key={index} onClick={() => handleClick(opt)}>
               {opt}
             </p>
           ))}
