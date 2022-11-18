@@ -1,0 +1,50 @@
+.jobsContainer {
+  margin: 48px auto 128px auto;
+  max-width: 1024px;
+  @include flex(column, center, center);
+  background-color: white;
+
+  &_item {
+    padding: 24px 0px 24px 32px;
+    border: 1px solid $jobBorder;
+    margin-bottom: 16px;
+    border-radius: 10px;
+    @include flex(row, center, space-between);
+    width: 100%;
+
+    &_left {
+      @include flex(column, none, none);
+
+      h3 {
+        font-size: 20px;
+      }
+      p {
+        color: $companycolor;
+        padding-top: 4px;
+      }
+    }
+
+    &_right {
+      @include flex(row, center, center);
+      max-width: 512px;
+      width: 100%;
+
+      &_info {
+        @include flex(column, none, none);
+        width: 33%;
+
+        &_top {
+          @include flex(row, none, none);
+          span {
+            font-size: 14px;
+            margin-left: 3px;
+          }
+        }
+        &_bottom {
+          @include flex(row, center, none);
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

@@ -49,8 +49,8 @@ const JobsDropdown = () => {
       <section className="dropdown-item-jobs-right">
         <span className="tag">{item.name}</span>
         <div className="elements-div">
-          {item.items.map((text) => (
-            <p className="items">
+          {item.items.map((text, index) => (
+            <p key={index} className="items">
               {text}
               <span>, </span>
             </p>

@@ -7,6 +7,8 @@
 $hoverColor: rgba(243, 245, 254, 1);
 $sectionBgColor: rgb(243, 245, 254);
 $sectionTxtColor: rgb(104, 103, 129);
+$jobBorder: rgb(228, 228, 237);
+$companycolor: #686781;
 
 @mixin flex($direction, $align-items, $justify-content) {
   display: flex;
