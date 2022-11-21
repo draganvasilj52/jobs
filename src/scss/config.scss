@@ -16,3 +16,23 @@ $companycolor: #686781;
   align-items: $align-items;
   justify-content: $justify-content;
 }
+
+@mixin button {
+  cursor: pointer;
+  color: #0160fe;
+  background-color: white;
+  font-size: 16px;
+  height: 50px;
+  padding: 10px 18px;
+  border: 2px solid #0160fe;
+  border-radius: 20px;
+  width: 100px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  &:hover {
+    color: white;
+    background-color: #0160fe;
+  }
+}

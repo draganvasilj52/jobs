@@ -4,16 +4,36 @@
   @include flex(column, center, center);
   background-color: white;
 
+  @media (max-width: 1024px) {
+    padding: 0 24px;
+  }
+
   &_item {
     padding: 24px 0px 24px 32px;
     border: 1px solid $jobBorder;
     margin-bottom: 16px;
     border-radius: 10px;
     @include flex(row, center, space-between);
+
+    @media (max-width: 768px) {
+      @include flex(column, flex-start, center);
+    }
+
     width: 100%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      border-color: blue;
+      transform: translateY(-5px);
+    }
 
     &_left {
       @include flex(column, none, none);
+
+      @media (max-width: 768px) {
+        margin-bottom: 10px;
+      }
 
       h3 {
         font-size: 20px;
@@ -28,6 +48,10 @@
       @include flex(row, center, center);
       max-width: 512px;
       width: 100%;
+
+      @media (max-width: 768px) {
+        align-items: flex-start;
+      }
 
       &_info {
         @include flex(column, none, none);

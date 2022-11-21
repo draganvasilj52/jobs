@@ -1,3 +1,49 @@
+.burger {
+  height: 100vh;
+
+  &_main {
+    @include flex(column, center, none);
+    height: 100%;
+
+    &_top {
+      height: 90vh;
+      @include flex(column, none, none);
+      padding: 30px;
+
+      h3 {
+        margin-bottom: 30px;
+      }
+
+      &_logo {
+        @include flex(none, center, space-between);
+        margin-bottom: 20px;
+
+        img {
+          max-width: 100%;
+          height: 50px;
+        }
+
+        span {
+          font-size: 20px;
+          cursor: pointer;
+          color: black;
+        }
+      }
+
+      &_options {
+        @include flex(column, none, none);
+      }
+    }
+
+    &_bottom {
+      @include flex(column, center, center);
+      button {
+        @include button;
+      }
+    }
+  }
+}
+
 .header {
   padding-left: 24px;
   padding-right: 24px;
@@ -9,27 +55,42 @@
     height: 70px;
   }
 
-  button {
-    cursor: pointer;
-    color: #0160fe;
-    background-color: white;
-    font-size: 16px;
-    height: 50px;
-    padding: 12px 24px;
-    border: 2px solid #0160fe;
-    border-radius: 20px;
-    display: inline-flex;
+  &_right {
+    display: flex;
     align-items: center;
-    transition: background-color 0.3s;
-    &:hover {
-      color: white;
-      background-color: #0160fe;
+
+    button {
+      @include button;
+    }
+
+    &_two {
+      display: none;
+      padding-left: 16px;
+      span {
+        cursor: pointer;
+        color: black;
+        font-size: 20px;
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+      }
     }
   }
 
   &_middle {
     @include flex(none, center, space-between);
     height: 100%;
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      @include flex(none, center, flex-start);
+      margin-left: 10px;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     &_relative {
       position: relative;

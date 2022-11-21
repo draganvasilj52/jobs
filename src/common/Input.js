@@ -35,9 +35,10 @@ const Input = ({ item }) => {
     >
       <div name={item.name} className="inputDiv_left">
         {elements.length > 0
-          ? elements?.map((item) => (
+          ? elements?.map((item, index) => (
               <SelectedDropdownOptions
                 item={item}
+                key={index}
                 elements={elements}
                 setElements={setElements}
               />

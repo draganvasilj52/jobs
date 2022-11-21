@@ -1,4 +1,8 @@
+import { useSelector } from 'react-redux'
+
 const SectionContainer = () => {
+  const jobs = useSelector((state) => state.data.jobsList)
+
   return (
     <section className="infoSection">
       <div className="infoSection_mainContainer">
@@ -7,9 +11,8 @@ const SectionContainer = () => {
           Herzegovina
         </h1>
         <p>
-          Currently active 600 jobs and 348 reviews within 365 companies. Jobs
-          for developers, designers, QA, marketing and management added and
-          refreshed daily.
+          Currently active {jobs.length} Jobs for developers, designers, QA,
+          marketing and management added and refreshed daily.
         </p>
       </div>
     </section>
