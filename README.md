@@ -1,1 +1,1 @@
-Welcome to Jobs page.
+Stored sample data in Redux TK and added filtering logic.
