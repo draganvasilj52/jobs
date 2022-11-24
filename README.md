@@ -1,1 +1,1 @@
-Welcome to Jobs page.
+Added additional designs and responsiveness of a page.
