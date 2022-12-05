@@ -8,9 +8,10 @@ const getAllJobs = async (req, res) => {
 }
 
 const createJob = async (req, res) => {
-  const { name } = req.body
+  const details = req.body
+  console.log(details)
   const job = new Job({
-    name,
+    ...details,
   })
 
   await job.save()

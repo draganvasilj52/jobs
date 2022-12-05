@@ -2,19 +2,19 @@ import JobItem from './JobItem'
 import { useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { copyInitialState } from '../features/dataSlice'
-
+import { getJobs } from '../features/dataSlice'
 const Jobs = () => {
-  const jobs = useSelector((state) => state.data.filteredArray)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(copyInitialState())
+    dispatch(getJobs())
   }, [dispatch])
+
+  const { jobs } = useSelector((state) => state.data.jobs)
 
   return (
     <div className="jobsContainer">
-      {jobs.map((item, index) => (
+      {jobs?.map((item, index) => (
         <JobItem key={index} item={item} />
       ))}
     </div>

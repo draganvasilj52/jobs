@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 const SectionContainer = () => {
-  const jobs = useSelector((state) => state.data.jobsList)
+  const { jobs } = useSelector((state) => state.data.jobs)
 
   return (
     <section className="infoSection">
