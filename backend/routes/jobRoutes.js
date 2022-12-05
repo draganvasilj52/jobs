@@ -4,5 +4,6 @@ const router = express.Router()
 
 router.get('/', jobController.getAllJobs)
 router.post('/create', jobController.createJob)
+router.get('/search', jobController.searchJob)
 
 module.exports = router

@@ -11,7 +11,7 @@ const SectionContainer = () => {
           Herzegovina
         </h1>
         <p>
-          Currently active {jobs.length} Jobs for developers, designers, QA,
+          Currently active {jobs?.length} Jobs for developers, designers, QA,
           marketing and management added and refreshed daily.
         </p>
       </div>

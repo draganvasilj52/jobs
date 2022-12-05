@@ -5,16 +5,15 @@ import { useDispatch } from 'react-redux'
 import { getJobs } from '../features/dataSlice'
 const Jobs = () => {
   const dispatch = useDispatch()
+  const filteredJobs = useSelector((state) => state.data.filteredJobs)
 
   useEffect(() => {
     dispatch(getJobs())
   }, [dispatch])
 
-  const { jobs } = useSelector((state) => state.data.jobs)
-
   return (
     <div className="jobsContainer">
-      {jobs?.map((item, index) => (
+      {filteredJobs?.map((item, index) => (
         <JobItem key={index} item={item} />
       ))}
     </div>
