@@ -80,33 +80,4 @@ const Search = () => {
   )
 }
 
-/* const location = useLocation()
-const query = useQuery()
-const page = query.get('page') || 1
-const searchQuery = query.get('searchQuery')
-const [search, setSearch] = useState('')
-const [tags, setTags] = useState([])
-
-const handleKeyPress = (e) => {
-  if (e.keyCode === 13) {
-    searchPost()
-  }
-}
-
-const handleAddChip = (tag) => setTags([...tags, tag])
-
-const handleDeleteChip = (chipToDelete) =>
-  setTags(tags.filter((tag) => tag !== chipToDelete))
-
-const searchPost = () => {
-  if (search.trim() || tags) {
-    dispatch(getPostsBySearch({ search, tags: tags.join(',') }))
-    history.push(
-      `/posts/search?searchQuery=${search || 'none'}&tags=${tags.join(',')}`
-    )
-  } else {
-    history.push('/')
-  }
-} */
-
 export default Search

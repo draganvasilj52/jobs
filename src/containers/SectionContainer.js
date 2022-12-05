@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
 const SectionContainer = () => {
-  const { jobs } = useSelector((state) => state.data.jobs)
+  const filteredJobs = useSelector((state) => state.data.filteredJobs)
 
   return (
     <section className="infoSection">
@@ -11,8 +11,8 @@ const SectionContainer = () => {
           Herzegovina
         </h1>
         <p>
-          Currently active {jobs?.length} Jobs for developers, designers, QA,
-          marketing and management added and refreshed daily.
+          Currently active {filteredJobs?.length} Jobs for developers,
+          designers, QA, marketing and management added and refreshed daily.
         </p>
       </div>
     </section>

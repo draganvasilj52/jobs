@@ -3,6 +3,7 @@ import axios from 'axios'
 const initialState = {
   jobs: [],
   filteredJobs: [],
+  loading: false,
 }
 
 export const getJobs = createAsyncThunk('data/jobs', async () => {
@@ -26,11 +27,19 @@ const dataSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers(builder) {
+    builder.addCase(getJobs.pending, (state) => {
+      state.loading = false
+    })
     builder.addCase(getJobs.fulfilled, (state, action) => {
+      state.loading = true
       state.jobs = action.payload
       state.filteredJobs = action.payload
     })
+    builder.addCase(getJobsBySearchTerm.pending, (state) => {
+      state.loading = false
+    })
     builder.addCase(getJobsBySearchTerm.fulfilled, (state, action) => {
+      state.loading = true
       state.filteredJobs = action.payload
     })
   },
