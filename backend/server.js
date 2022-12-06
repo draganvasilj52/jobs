@@ -2,11 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
 const jobRoutes = require('./routes/jobRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 const app = express()
 app.use(cors())
 app.use(express.json())
 app.use('/', jobRoutes)
+app.use('/', userRoutes)
 
 const CONNECTION_URL =
   'mongodb+srv://draganvasilj:draganvasilj@cluster0.hdf1vjr.mongodb.net/jobs'
