@@ -9,7 +9,7 @@ const getAllJobs = async (req, res) => {
 
 const createJob = async (req, res) => {
   const details = req.body
-  console.log(details)
+
   const job = new Job({
     ...details,
   })
@@ -17,6 +17,16 @@ const createJob = async (req, res) => {
   await job.save()
 
   res.status(201).json({
+    job,
+  })
+}
+
+const getJob = async (req, res) => {
+  const id = req.params.id
+
+  const job = await Job.findById(id)
+
+  res.status(200).json({
     job,
   })
 }
@@ -30,14 +40,10 @@ const searchJob = async (req, res) => {
     $or: [
       { location: { $in: location?.split(',') } },
       { technologies: { $in: technologies?.split(',') } },
-
       { experience: { $in: experience?.split(',') } },
     ],
   })
 
-  /*   const posts = await PostMessage.find({
-    $or: [{ title }, { tags: { $in: tags.split(',') } }],
-  }) */
   res.json({
     jobs,
   })
@@ -46,3 +52,4 @@ const searchJob = async (req, res) => {
 exports.getAllJobs = getAllJobs
 exports.createJob = createJob
 exports.searchJob = searchJob
+exports.getJob = getJob
