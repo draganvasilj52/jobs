@@ -22,7 +22,7 @@ const createJob = async (req, res) => {
 }
 
 const getJob = async (req, res) => {
-  const id = req.params.id
+  const { id } = req.params
 
   const job = await Job.findById(id)
 

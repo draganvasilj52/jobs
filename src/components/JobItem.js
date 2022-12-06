@@ -2,7 +2,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 import BarChartIcon from '@mui/icons-material/BarChart'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import JobItemRightSection from '../common/JobItemRightSection'
-
+import { useNavigate } from 'react-router-dom'
 const JobItem = ({ item }) => {
   const itemRightSectionData = [
     {
@@ -21,9 +21,13 @@ const JobItem = ({ item }) => {
       icon: <AccessTimeIcon sx={{ fontSize: 14, color: 'gray' }} />,
     },
   ]
+  const navigate = useNavigate()
 
   return (
-    <div className="jobsContainer_item">
+    <div
+      onClick={() => navigate(`/job/${item._id}`)}
+      className="jobsContainer_item"
+    >
       <div className="jobsContainer_item_left">
         <h3>{item.jobTitle}</h3>
         <p>{item.companyName}</p>

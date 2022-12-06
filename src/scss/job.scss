@@ -1,0 +1,59 @@
+.jobParent {
+  background-color: $sectionBgColor;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &_top {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 1024px;
+    margin: 0 auto;
+
+    &_div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      p {
+        padding-left: 8px;
+      }
+    }
+
+    h2 {
+      font-size: 36px;
+      padding-bottom: 16px;
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 6px;
+    }
+  }
+
+  &_bottom {
+    display: flex;
+    max-width: 600px;
+    width: 60%;
+    margin-bottom: 60px;
+
+    &_item {
+      display: flex;
+      flex-grow: 1;
+      width: 33%;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      &_top {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        span {
+          padding-left: 4px;
+        }
+        padding-bottom: 5px;
+      }
+    }
+  }
+}

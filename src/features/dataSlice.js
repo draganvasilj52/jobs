@@ -6,8 +6,8 @@ const initialState = {
   loading: false,
 }
 
-export const getJobs = createAsyncThunk('data/jobs', async () => {
-  const response = await axios.get('http://localhost:5000')
+export const getJobs = createAsyncThunk('data/job', async () => {
+  const response = await axios.get(`http://localhost:5000`)
   return response.data.jobs
 })
 
