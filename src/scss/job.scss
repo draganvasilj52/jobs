@@ -3,16 +3,14 @@
   background-color: $section-bg-color;
 
   &_top {
-    max-width: 1024px;
-    margin: 0 auto;
     padding-top: 60px;
     padding-bottom: 60px;
 
     &_div {
-      @include flex(row, center, center);
+      @include flex(row, none, center);
 
       p {
-        padding-left: 5px;
+        padding-left: 3px;
       }
     }
 
@@ -28,15 +26,14 @@
   }
 
   &_bottom {
-    display: flex;
+    @include flex(row, none, none);
     max-width: 600px;
-    width: 60%;
+    width: 100%;
     margin-bottom: 60px;
 
     &_item {
       @include flex(column, center, center);
-      flex-grow: 1;
-      width: 33%;
+      flex: 33%;
 
       &_top {
         @include flex(row, center, center);

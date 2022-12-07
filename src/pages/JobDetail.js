@@ -17,41 +17,46 @@ const JobDetail = () => {
   useEffect(() => {
     getJob(jobId)
   }, [jobId])
-  console.log(job)
+
+  const bottomItems = [
+    {
+      icon: <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />,
+      spanText: 'Experience',
+      pText: job.experience?.join(', '),
+    },
+    {
+      icon: <AccessTimeOutlinedIcon sx={{ width: '13px', height: '16px' }} />,
+      spanText: 'Working Hours',
+      pText: 'Full Time Job',
+    },
+    {
+      icon: <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />,
+      spanText: 'Deadline',
+      pText: job.applicationDeadline,
+    },
+  ]
 
   return (
     <div className="jobParent">
       <div className="jobParent_top">
         <h2>{job.companyName}</h2>
         <div className="jobParent_top_div">
-          <LocationOnOutlinedIcon sx={{ width: '13px', height: '16px' }} />
+          <LocationOnOutlinedIcon sx={{ width: '14px', height: '16px' }} />
           <p>{job.location?.join(', ')}</p>
         </div>
-
         <span>{job.technologies?.join(', ')}</span>
       </div>
+
       <div className="jobParent_bottom">
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Experience</span>
+        {bottomItems.map((item, index) => (
+          <div key={index} className="jobParent_bottom_item">
+            <div className="jobParent_bottom_item_top">
+              {item.icon}
+              <span>{item.spanText}</span>
+            </div>
+            <p>{item.pText}</p>
           </div>
-          <p>{job.experience?.join(', ')}</p>
-        </div>
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <AccessTimeOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Working Hours</span>
-          </div>
-          <p>Full Time Job</p>
-        </div>
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Deadline</span>
-          </div>
-          <p>{job.applicationDeadline}</p>
-        </div>
+        ))}
       </div>
     </div>
   )
