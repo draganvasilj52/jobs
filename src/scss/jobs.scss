@@ -1,27 +1,26 @@
 .jobsContainer {
-  margin: 48px auto 128px auto;
-  max-width: 1024px;
   @include flex(column, center, center);
-  background-color: white;
+  max-width: 1024px;
+  margin: 48px auto 128px auto;
+  background-color: $white-color;
 
   @media (max-width: 1024px) {
     padding: 0 24px;
   }
 
   &_item {
+    @include flex(row, center, space-between);
+    width: 100%;
     padding: 24px 0px 24px 32px;
-    border: 1px solid $jobBorder;
+    border: 1px solid $job-border;
     margin-bottom: 16px;
     border-radius: 10px;
-    @include flex(row, center, space-between);
+    transition: all 0.3s ease;
+    cursor: pointer;
 
     @media (max-width: 768px) {
       @include flex(column, flex-start, center);
     }
-
-    width: 100%;
-    transition: all 0.3s ease;
-    cursor: pointer;
 
     &:hover {
       border-color: blue;
@@ -39,15 +38,15 @@
         font-size: 20px;
       }
       p {
-        color: $companycolor;
+        color: $company-color;
         padding-top: 4px;
       }
     }
 
     &_right {
       @include flex(row, center, center);
-      max-width: 512px;
       width: 100%;
+      max-width: 512px;
 
       @media (max-width: 768px) {
         align-items: flex-start;

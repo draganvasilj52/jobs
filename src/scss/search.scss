@@ -1,14 +1,15 @@
 .searchDiv {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   max-width: 1024px;
   padding: 40px 24px;
-  display: grid;
   margin: -30px auto 0px auto;
+  border-radius: 20px;
   border: 1px solid rgb(243, 245, 254);
   z-index: 20;
   gap: 10px;
   background-color: white;
-  border-radius: 20px;
-  grid-template-columns: repeat(5, 1fr);
+
   @media (min-width: 1024px) {
     :nth-child(3) {
       grid-column: 3 / span 2;
@@ -24,42 +25,39 @@
   }
 
   button {
-    background-color: blue;
+    background-color: $blue-color;
     color: white;
     border-radius: 20px;
     outline: 0;
-    border: 1px solid blue;
+    border: 1px solid $blue-color;
     cursor: pointer;
     padding: 12px 24px;
-    font-size: 16px;
+    font-size: $base-font-size;
   }
 }
 .inputDiv {
+  @include flex(row, center, none);
   border: 1px solid #e4e4ed;
   border-radius: 25px;
   padding: 10px 0px 10px 10px;
-  display: flex;
-  align-items: center;
-  position: relative;
 
   span {
     width: 1px;
     height: 20px;
-    background-color: gray;
+    background-color: $gray-color;
     margin: 8px 0;
   }
 
   &_left {
-    padding: 2px 8px;
-    display: flex;
-    flex-direction: column;
+    @include flex(column, none, none);
     width: 100%;
+    padding: 2px 8px;
 
     &_selected {
       @include flex(row, center, center);
+      width: 120px;
       background-color: lightgray;
       margin-top: 4px;
-      width: 120px;
     }
   }
 
@@ -86,7 +84,7 @@
       padding: 7px;
       cursor: pointer;
       &:hover {
-        background-color: $hoverColor;
+        background-color: $hover-color;
       }
     }
   }

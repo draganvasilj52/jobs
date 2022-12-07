@@ -4,11 +4,17 @@
   padding: 0;
 }
 
-$hoverColor: rgba(243, 245, 254, 1);
-$sectionBgColor: rgb(243, 245, 254);
-$sectionTxtColor: rgb(104, 103, 129);
-$jobBorder: rgb(228, 228, 237);
-$companycolor: #686781;
+$hover-color: rgba(243, 245, 254, 1);
+$section-bg-color: rgb(243, 245, 254);
+$section-txt-color: rgb(104, 103, 129);
+$job-border: rgb(228, 228, 237);
+$company-color: #686781;
+$button-color: #0160fe;
+$white-color: #fff;
+$gray-color: gray;
+$blue-color: blue;
+$black-color: black;
+$base-font-size: 16px;
 
 @mixin flex($direction, $align-items, $justify-content) {
   display: flex;
@@ -19,12 +25,12 @@ $companycolor: #686781;
 
 @mixin button {
   cursor: pointer;
-  color: #0160fe;
-  background-color: white;
-  font-size: 16px;
+  color: $button-color;
+  background-color: $white-color;
+  font-size: $base-font-size;
   height: 50px;
   padding: 10px 18px;
-  border: 2px solid #0160fe;
+  border: 2px solid $button-color;
   border-radius: 20px;
   width: 100px;
   display: inline-flex;
@@ -32,7 +38,7 @@ $companycolor: #686781;
   justify-content: center;
   transition: background-color 0.3s;
   &:hover {
-    color: white;
-    background-color: #0160fe;
+    color: $white-color;
+    background-color: $button-color;
   }
 }

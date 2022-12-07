@@ -1,18 +1,19 @@
 .dropdown-item-jobs {
-  &:hover {
-    background-color: $hoverColor;
-  }
   display: flex;
   margin-bottom: 5px;
   padding: 10px;
+
+  &:hover {
+    background-color: $hover-color;
+  }
 
   &-right {
     @include flex(column, none, none);
     padding-left: 10px;
 
     .tag {
-      font-weight: bold;
       padding-bottom: 5px;
+      font-weight: bold;
     }
 
     .elements-div {
@@ -22,12 +23,13 @@
     }
 
     .items {
+      margin-right: 7px;
+      font-size: $base-font-size;
+
       cursor: pointer;
       &:hover {
-        color: blue;
+        color: $blue-color;
       }
-      font-size: 16px;
-      margin-right: 7px;
 
       &:last-child {
         span {
@@ -39,14 +41,15 @@
 }
 
 .dropdown-item-companies {
-  &:hover {
-    background-color: $hoverColor;
-  }
-  display: flex;
-  align-items: center;
+  @include flex(none, center, none);
+
   margin-bottom: 5px;
   padding: 10px;
   cursor: pointer;
+
+  &:hover {
+    background-color: $hover-color;
+  }
 
   .companies {
     padding-left: 10px;

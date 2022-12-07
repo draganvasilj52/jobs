@@ -26,7 +26,7 @@
         span {
           font-size: 20px;
           cursor: pointer;
-          color: black;
+          color: $black-color;
         }
       }
 
@@ -45,10 +45,10 @@
 }
 
 .header {
+  @include flex(none, center, space-between);
+  height: 98px;
   padding-left: 24px;
   padding-right: 24px;
-  height: 98px;
-  @include flex(none, center, space-between);
 
   img {
     max-width: 100%;
@@ -56,8 +56,7 @@
   }
 
   &_right {
-    display: flex;
-    align-items: center;
+    @include flex(none, center, none);
 
     button {
       @include button;
@@ -83,8 +82,8 @@
     height: 100%;
 
     @media (max-width: 1024px) {
-      width: 100%;
       @include flex(none, center, flex-start);
+      width: 100%;
       margin-left: 10px;
     }
 
@@ -114,10 +113,10 @@
       }
 
       p {
-        font-size: 16px;
+        font-size: $base-font-size;
         padding-right: 7px;
         &:hover {
-          color: blue;
+          color: $blue-color;
         }
       }
 
@@ -129,7 +128,7 @@
         background-color: white;
         z-index: 10;
         padding: 20px;
-        border: 1px solid gray;
+        border: 1px solid $gray-color;
         border-radius: 20px;
         cursor: default;
       }
