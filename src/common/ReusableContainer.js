@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
+import LaunchIcon from '@mui/icons-material/Launch'
 const ReusableContainer = ({
   title,
   description,
@@ -31,7 +32,7 @@ const ReusableContainer = ({
               {!companydetail && (
                 <h2 className="reusable-section-detail-top-h2">
                   <Link to={`/company/${location?.companyName}`}>
-                    {location.companyName}
+                    {location.companyName} <LaunchIcon />
                   </Link>
                 </h2>
               )}
