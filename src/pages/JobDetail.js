@@ -4,6 +4,7 @@ import axios from 'axios'
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined'
 import BarChartOutlinedIcon from '@mui/icons-material/BarChartOutlined'
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined'
+import ReusableContainer from '../common/ReusableContainer'
 
 const JobDetail = () => {
   let { jobId } = useParams()
@@ -17,43 +18,59 @@ const JobDetail = () => {
   useEffect(() => {
     getJob(jobId)
   }, [jobId])
-  console.log(job)
+
+  const location = {
+    icon: (
+      <LocationOnOutlinedIcon
+        sx={{ width: '13px', height: '16px', color: 'rgb(104, 103, 129)' }}
+      />
+    ),
+    location: job.location,
+    companyName: job.companyName,
+    technologies: job.technologies,
+  }
+
+  const bottomItems = [
+    {
+      icon: (
+        <BarChartOutlinedIcon
+          sx={{ width: '16px', height: '16px', color: 'rgb(104, 103, 129)' }}
+        />
+      ),
+      spanText: 'Experience',
+      pText: job.experience?.join(', '),
+    },
+    {
+      icon: (
+        <AccessTimeOutlinedIcon
+          sx={{ width: '16px', height: '16px', color: 'rgb(104, 103, 129)' }}
+        />
+      ),
+      spanText: 'Working Hours',
+      pText: 'Full Time Job',
+    },
+    {
+      icon: (
+        <BarChartOutlinedIcon
+          sx={{
+            width: '16px',
+            height: '16px',
+            color: 'rgb(104, 103, 129)',
+          }}
+        />
+      ),
+      spanText: 'Deadline',
+      pText: job.applicationDeadline,
+    },
+  ]
 
   return (
-    <div className="jobParent">
-      <div className="jobParent_top">
-        <h2>{job.companyName}</h2>
-        <div className="jobParent_top_div">
-          <LocationOnOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-          <p>{job.location?.join(', ')}</p>
-        </div>
-
-        <span>{job.technologies?.join(', ')}</span>
-      </div>
-      <div className="jobParent_bottom">
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Experience</span>
-          </div>
-          <p>{job.experience?.join(', ')}</p>
-        </div>
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <AccessTimeOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Working Hours</span>
-          </div>
-          <p>Full Time Job</p>
-        </div>
-        <div className="jobParent_bottom_item">
-          <div className="jobParent_bottom_item_top">
-            <BarChartOutlinedIcon sx={{ width: '13px', height: '16px' }} />
-            <span>Deadline</span>
-          </div>
-          <p>{job.applicationDeadline}</p>
-        </div>
-      </div>
-    </div>
+    <ReusableContainer
+      jobdetail
+      jobTitle={job.jobTitle}
+      location={location}
+      bottomItems={bottomItems}
+    />
   )
 }
 

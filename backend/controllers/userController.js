@@ -25,9 +25,13 @@ const signUp = async (req, res) => {
 
   await newUser.save()
 
-  const token = jwt.sign({ email: newUser.email, id: newUser._id }, 'secret', {
-    expiresIn: '1h',
-  })
+  const token = jwt.sign(
+    { username: newUser.username, id: newUser.id },
+    'secret',
+    {
+      expiresIn: '1h',
+    }
+  )
 
   newUser.password = undefined
 
@@ -56,7 +60,7 @@ const signIn = async (req, res) => {
   }
 
   const token = jwt.sign(
-    { email: existingUser.email, id: existingUser._id },
+    { username: existingUser.username, id: existingUser._id },
     'secret',
     { expiresIn: '1h' }
   )

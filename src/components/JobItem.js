@@ -25,7 +25,7 @@ const JobItem = ({ item }) => {
 
   return (
     <div
-      onClick={() => navigate(`/job/${item._id}`)}
+      onClick={() => navigate(`/job/${item.companyName}/${item._id}`)}
       className="jobsContainer_item"
     >
       <div className="jobsContainer_item_left">

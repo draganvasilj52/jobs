@@ -1,6 +1,7 @@
 .jobsContainer {
   margin: 48px auto 128px auto;
   max-width: 1024px;
+  width: 100%;
   @include flex(column, center, center);
   background-color: white;
 
